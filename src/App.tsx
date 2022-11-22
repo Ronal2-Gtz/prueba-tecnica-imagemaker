@@ -1,5 +1,11 @@
+import { Login } from './screens/login/login'
+
 const App = (): React.ReactElement => {
-	return <div>app</div>
+	return (
+		<div className='h-screen w-full'>
+			<Login />
+		</div>
+	)
 }
 
 export default App

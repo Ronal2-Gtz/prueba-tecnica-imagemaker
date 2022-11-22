@@ -15,11 +15,11 @@ const buttonSizes = {
 } as const;
 
 const buttonPaddings = {
-    xs: 'py-2.5 px-2.5 lg:py-1',
-    sm: 'px-6 py-2.5 lg:py-1',
-    md: 'px-10 xl:px-16 py-2.5 lg:py-1',
-    lg: 'px-14 xl:px-20 py-2.5 lg:py-1',
-    xl: 'px-20 xl:px-24 py-2.5 lg:py-1',
+    xs: 'py-2.5 px-2.5 lg:py-3',
+    sm: 'px-6 py-2.5 lg:py-3',
+    md: 'px-10 xl:px-16 py-2.5 lg:py-3',
+    lg: 'px-14 xl:px-20 py-2.5 lg:py-3',
+    xl: 'px-20 xl:px-24 py-2.5 lg:py-3',
     none: '',
 } as const;
 

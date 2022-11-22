@@ -29,7 +29,7 @@ export const Input = ({
 				id={name}
 				name={name}
 				{...props}
-				className={` w-full border-b-2 py-3 text-sm placeholder-gray-300 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-300 outline-none 
+				className={` w-full border-b-2 py-3 text-sm placeholder-gray-400 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-300 outline-none 
                 ${readOnly && 'cursor-not-allowed bg-gray-100'}
                 ${Icon ? 'pl-10 ': 'pl-3'}
                 `}
