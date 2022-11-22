@@ -20,6 +20,8 @@ module.exports = {
 		'@typescript-eslint/consistent-type-definitions': 'off',
 		'@typescript-eslint/no-dynamic-delete': 'off',
 		'@typescript-eslint/strict-boolean-expressions': 'off',
+		'@typescript-eslint/restrict-template-expressions': 'off',
+		'react/no-unknown-property': 'off',
 	},
 	settings: {
 		react: {

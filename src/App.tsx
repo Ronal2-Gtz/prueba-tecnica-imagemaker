@@ -1,11 +1,5 @@
-import './App.css'
-
 const App = (): React.ReactElement => {
-	return (
-		<div className='App bg-slate-600'>
-			hola mundo
-		</div>
-	)
+	return <div>app</div>
 }
 
 export default App
