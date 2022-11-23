@@ -1,9 +1,9 @@
-import { Login } from './screens/login'
+import { AppRouter } from './routes/appRouter'
 
 const App = (): React.ReactElement => {
 	return (
 		<div className='h-screen w-full'>
-			<Login />
+			<AppRouter />
 		</div>
 	)
 }

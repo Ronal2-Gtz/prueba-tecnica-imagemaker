@@ -1,5 +1,10 @@
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { appearances, buttonPaddings, buttonRounded, buttonSizes } from './utils'
+import {
+	appearances,
+	buttonPaddings,
+	buttonRounded,
+	buttonSizes,
+} from './utils'
 
 type ButtonProps = {
 	type?: 'button' | 'submit' | 'reset'
@@ -20,7 +25,7 @@ export const Button = ({
 	type = 'button',
 	appearance = 'primary',
 	block = false,
-	rounded ='md',
+	rounded = 'md',
 	children,
 	size = 'md',
 	padding = 'md',
@@ -39,7 +44,7 @@ export const Button = ({
                 ${buttonSizes[size]}
                 ${buttonPaddings[padding]}
                 ${buttonRounded[rounded]}
-                ${disabled ? `cursor-not-allowed ${appearances.disabled}` : '' }
+                ${disabled ? `cursor-not-allowed ${appearances.disabled}` : ''}
             `}
 			type={type}
 			disabled={isLoading ?? disabled}

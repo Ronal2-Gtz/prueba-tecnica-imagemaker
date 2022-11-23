@@ -12,13 +12,18 @@ type AuthResponse = {
 	id: string
 }
 
-export const AuthService = async ({ userRut, password }: Company): Promise<any> => {
+export const AuthService = async ({
+	userRut,
+	password,
+}: Company): Promise<any> => {
 	try {
-		const { data } = await axios.get<AuthResponse>('http://localhost:3004/login', {
-			params: { user: userRut, pass: password }
-		})
+		const { data } = await axios.get<AuthResponse>(
+			'http://localhost:3004/login',
+			{
+				params: { user: userRut, pass: password },
+			}
+		)
 		return { ...data, ok: true }
-
 	} catch (error) {
 		return { ok: false, error }
 	}
