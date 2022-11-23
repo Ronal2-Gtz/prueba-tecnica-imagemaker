@@ -1,51 +1,20 @@
 import { InputSearch } from '../../components'
-import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CreateAddresseeModal } from './components/createAddresseeModal'
-import { Table } from 'antd'
-
-const dataSource: readonly any[] | undefined = [
-]
-
-const columns = [
-	{
-		title: 'Rut',
-		dataIndex: 'name',
-		key: 'name',
-		sorter: true,
-	},
-	{
-		title: 'Nombre',
-		dataIndex: 'age',
-		key: 'age',
-		sorter: true,
-	},
-	{
-		title: 'Alias',
-		dataIndex: 'address',
-		key: 'address',
-		sorter: true,
-	},
-	{
-		title: 'Banco',
-		dataIndex: 'address',
-		key: 'address',
-		sorter: true,
-	},
-	{
-		title: 'Cuenta',
-		dataIndex: 'address',
-		key: 'address',
-		sorter: true,
-	},
-]
+import { useEffect } from 'react'
+import { useAppDispatch } from '../../hooks/useDispatch'
+import { getAddresseeThunks } from '../../store/addressee/thunksAddressee'
+import { TableAddressee } from './components/table/tableAddressee'
 
 export const Addressee = (): React.ReactElement => {
-	const { register, handleSubmit } = useForm()
+	const dispatch = useAppDispatch()
+	const { register } = useForm()
 
-	const onSearch: SubmitHandler<FieldValues> = (data) => {
-		console.log(data)
-	}
+	useEffect(() => {
+		dispatch(getAddresseeThunks())
+	}, [dispatch])
+
 
 	return (
 		<div className='flex flex-col justify-center gap-y-10 w-9/12 h-full m-auto '>
@@ -54,17 +23,19 @@ export const Addressee = (): React.ReactElement => {
 				<hr className='w-[7%] lg:w-[5%] xl:w-[3%] ' />
 			</div>
 			<div className='flex justify-between items-center'>
-				<form onSubmit={handleSubmit(onSearch)}>
+				<form>
 					<InputSearch
 						Icon={<AiOutlineSearch />}
 						name='search'
 						placeholder='Buscar'
 						register={register}
+					
 					/>
+					
 				</form>
 				<CreateAddresseeModal />
 			</div>
-			<Table dataSource={dataSource} columns={columns} />
+			<TableAddressee />
 		</div>
 	)
 }
