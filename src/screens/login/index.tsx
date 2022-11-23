@@ -12,14 +12,12 @@ type FormLogin = {
 
 export const Login = (): React.ReactElement => {
 	const dispatch = useAppDispatch()
+	const { register, handleSubmit } = useForm()
 
 	const login: SubmitHandler<FieldValues> = (data) => {
 		const { companyRut, password, userRut } = data as FormLogin
-
 		dispatch(checkingAutentication({ companyRut, password, userRut }))
 	}
-
-	const { register, handleSubmit } = useForm()
 
 	return (
 		<div className='flex flex-col justify-center items-center w-full h-full  '>
