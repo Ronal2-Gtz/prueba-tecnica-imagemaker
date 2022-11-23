@@ -1,0 +1,278 @@
+{
+  "login": [
+    {
+      "id": 1,
+      "user": 123456,
+      "pass": "qwerty"
+    }
+  ],
+  "lastMov": [
+    {
+      "id": 1,
+      "date": "2022-03-01",
+      "dateTime": "00:00:00",
+      "description": "PAGO INTERES LINEA DE CREDITO",
+      "operationRef": "1400718142",
+      "amount": "-1784",
+      "balance": "0",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 2,
+      "date": "2022-03-01",
+      "dateTime": "00:00:00",
+      "description": "IMPUESTO LINEA",
+      "operationRef": "1400718142",
+      "amount": "-251",
+      "balance": "1784",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 3,
+      "date": "2022-03-01",
+      "dateTime": "00:00:00",
+      "description": "TRANSFERENCIA DE LINEA CREDITO",
+      "operationRef": "1401042260",
+      "amount": "2035",
+      "balance": "2035",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 4,
+      "date": "2022-02-21",
+      "dateTime": "00:00:00",
+      "description": "TRANSFERENCIA DE LINEA CREDITO",
+      "operationRef": "1397981302",
+      "amount": "380691",
+      "balance": "0",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 5,
+      "date": "2022-02-21",
+      "dateTime": "00:00:00",
+      "description": "PAGO CUOTA 001",
+      "operationRef": "1397702441",
+      "amount": "-508450",
+      "balance": "-380691",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "NUEVA MORANDE",
+      "correlative": null
+    },
+    {
+      "id": 6,
+      "date": "2022-02-11",
+      "dateTime": "00:00:00",
+      "description": "PAGO CUOTA 030",
+      "operationRef": "1395259116",
+      "amount": "-354706",
+      "balance": "127759",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 7,
+      "date": "2022-02-10",
+      "dateTime": "00:00:00",
+      "description": "TEF",
+      "operationRef": "1394843349",
+      "amount": "-10",
+      "balance": "482465",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": "TPTON",
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 8,
+      "date": "2022-01-26",
+      "dateTime": "00:00:00",
+      "description": "PAGO CUOTA 006",
+      "operationRef": "1389760305",
+      "amount": "-831703",
+      "balance": "482475",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 9,
+      "date": "2022-01-20",
+      "dateTime": "00:00:00",
+      "description": "TEF",
+      "operationRef": "1388026914",
+      "amount": "-1",
+      "balance": "1314178",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": "TPTON",
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "OFICINA CENTRO",
+      "correlative": null
+    },
+    {
+      "id": 10,
+      "date": "2022-01-20",
+      "dateTime": "00:00:00",
+      "description": "APERTURA PRESTAMO",
+      "operationRef": "1388026908",
+      "amount": "1000000",
+      "balance": "1314179",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "NUEVA MORANDE",
+      "correlative": null
+    },
+    {
+      "id": 11,
+      "date": "2022-01-20",
+      "dateTime": "00:00:00",
+      "description": "GASTOS DE NOTARIO",
+      "operationRef": "1388026908",
+      "amount": "-2260",
+      "balance": "314179",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "NUEVA MORANDE",
+      "correlative": null
+    },
+    {
+      "id": 12,
+      "date": "2022-01-20",
+      "dateTime": "00:00:00",
+      "description": "BNP PARIBAS CARDIF SEGUROS DE",
+      "operationRef": "1388026908",
+      "amount": "-1380",
+      "balance": "316439",
+      "custName": "PATERNO MATERNO NOMBRES ",
+      "trnType": null,
+      "trnCreditDebit": null,
+      "trnCode": null,
+      "office": "NUEVA MORANDE",
+      "correlative": null
+    }
+  ],
+  "addressee": [
+    {
+      "id": 1,
+      "rut": "13049387-4",
+      "name": "Luis Carmona",
+      "alias": "Lucho",
+      "detail": {
+        "currency": "CLP",
+        "acc_numbr": "000070174500",
+        "adr_email": "lucho123@gmail.com",
+        "bank_id": "37",
+        "bank_name": "BANCO SANTANDER-CHILE",
+        "acc_type": "01000",
+        "branch_id": null
+      },
+      "customerID": null,
+      "type": null
+    },
+    {
+      "id": 2,
+      "rut": "14932048-2",
+      "name": "Carlos Perez",
+      "alias": "Carlos",
+      "detail": {
+        "currency": "CLP",
+        "acc_numbr": "61610432",
+        "adr_email": "carlosP@gmail.com",
+        "bank_id": "16",
+        "bank_name": "BANCO DE CREDITO E INVERSIONES",
+        "acc_type": "01000",
+        "branch_id": null
+      },
+      "customerID": null,
+      "type": null
+    },
+    {
+      "id": 3,
+      "rut": "23555028-8",
+      "name": "Victor Cortes",
+      "alias": "Victor",
+      "detail": {
+        "currency": "CLP",
+        "acc_numbr": "16253124",
+        "adr_email": "vicort@gmail.com",
+        "bank_id": "12",
+        "bank_name": "BANCO DEL ESTADO DE CHILE",
+        "acc_type": "01000",
+        "branch_id": null
+      },
+      "customerID": null,
+      "type": null
+    },
+    {
+      "id": 4,
+      "rut": "6455785-8",
+      "name": "Gonzalo Urrutia",
+      "alias": "Gonza",
+      "detail": {
+        "currency": "CLP",
+        "acc_numbr": "972153432",
+        "adr_email": "gonzalo.urritia@hotmail.com",
+        "bank_id": "14",
+        "bank_name": "SCOTIABANK CHILE",
+        "acc_type": "01000",
+        "branch_id": null
+      },
+      "customerID": null,
+      "type": null
+    },
+    {
+      "id": 6,
+      "rut": "1-9",
+      "name": "juan Carmona",
+      "alias": "juan",
+      "detail": {
+        "currency": "CLP",
+        "acc_numbr": "000070174500",
+        "adr_email": "lucho123@gmail.com",
+        "bank_id": "37",
+        "bank_name": "BANCO SANTANDER-CHILE",
+        "acc_type": "01000",
+        "branch_id": null
+      },
+      "customerID": null,
+      "type": null
+    }
+  ]
+}

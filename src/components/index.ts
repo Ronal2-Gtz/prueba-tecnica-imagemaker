@@ -1,5 +1,5 @@
-import { Button } from './button/button';
-import { Input } from './input/input';
+import { Button } from './button';
+import { Input } from './input';
 
 export {
     Button,

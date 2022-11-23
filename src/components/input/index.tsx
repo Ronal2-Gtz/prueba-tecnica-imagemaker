@@ -1,3 +1,4 @@
+import {UseFormRegister, FieldValues} from 'react-hook-form'
 type InputProps = {
 	label: string
 	name: string
@@ -5,6 +6,7 @@ type InputProps = {
 	readOnly?: boolean
 	Icon?: React.ReactNode
 	srLabel?: boolean
+	register: UseFormRegister<FieldValues>
 	onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
@@ -14,6 +16,7 @@ export const Input = ({
 	label,
 	srLabel,
 	Icon,
+	register,
 	readOnly = false,
 	...props
 }: InputProps): React.ReactElement => {
@@ -27,12 +30,12 @@ export const Input = ({
 				type={type}
 				readOnly={readOnly}
 				id={name}
-				name={name}
-				{...props}
 				className={` w-full border-b-2 py-3 text-sm placeholder-gray-400 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-300 outline-none 
                 ${readOnly && 'cursor-not-allowed bg-gray-100'}
-                ${Icon ? 'pl-10 ': 'pl-3'}
+                ${Icon ? 'pl-10 ' : 'pl-3'}
                 `}
+				{...register(name)}
+				{...props}
 			/>
 		</div>
 	)

@@ -1,4 +1,4 @@
-import { Login } from './screens/login/login'
+import { Login } from './screens/login'
 
 const App = (): React.ReactElement => {
 	return (
