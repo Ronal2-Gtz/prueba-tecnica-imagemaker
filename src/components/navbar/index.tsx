@@ -14,7 +14,7 @@ export const Navbar = (): React.ReactElement => {
 		localStorage.clear()
 	}
 
-	const isLogin = useMemo(() => status === 'authenticated', [status])
+	const isAuthenticating = useMemo(() => status === 'authenticated', [status])
 
 	return (
 		<header>
@@ -25,17 +25,17 @@ export const Navbar = (): React.ReactElement => {
 							Imagemaker
 						</span>
 					</Link>
-					{isLogin ? (
+					{isAuthenticating ? (
 						<div className='flex items-center lg:order-2'>
 							<Link
 								to={LAST_MOV}
-								className=' focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 '
+								className=' focus:ring-gray-300 font-medium text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2'
 							>
 								Ultimos movimientos
 							</Link>
 							<Link
 								to={ADDRESSEE}
-								className=' focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 '
+								className=' focus:ring-gray-300 font-medium text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 '
 							>
 								Destinatarios
 							</Link>
