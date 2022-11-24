@@ -1,33 +1,33 @@
 import {
-	AddAddressee,
+	addAddressee,
 	AddresseeParams,
-	DeleteAddressee,
-	GetAddressee,
+	deleteAddressee,
+	getAddressee,
 } from '../../services/addresseeService'
 import { AppDispatch } from '../store'
 import {
 	addAddresseeSlice,
 	addAddresseeList,
-	deleteAddressee,
+	removeAddressee,
 } from './addresseeSlice'
 
 const getAddresseeThunks = () => {
 	return async (dispatch: AppDispatch) => {
-		const addresseeList = await GetAddressee()
+		const addresseeList = await getAddressee()
 		dispatch(addAddresseeList(addresseeList.data))
 	}
 }
 
 const deleteAddresseeThunks = (id: string) => {
 	return async (dispatch: AppDispatch) => {
-		await DeleteAddressee(id)
-		dispatch(deleteAddressee(id))
+		await deleteAddressee(id)
+		dispatch(removeAddressee(id))
 	}
 }
 
 const addAddresseeThunks = (addAddresseeData: AddresseeParams) => {
 	return async (dispatch: AppDispatch) => {
-		await AddAddressee(addAddresseeData)
+		await addAddressee(addAddresseeData)
 		dispatch(addAddresseeSlice(addAddresseeData))
 	}
 }

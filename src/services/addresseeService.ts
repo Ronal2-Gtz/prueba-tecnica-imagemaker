@@ -20,7 +20,7 @@ type AddresseeResponse = Array<{
 	type: string
 }>
 
-const GetAddressee = async (): Promise<any> => {
+const getAddressee = async (): Promise<any> => {
 	try {
 		const { data } = await axios.get<AddresseeResponse>(
 			'http://localhost:3004/addressee'
@@ -30,6 +30,7 @@ const GetAddressee = async (): Promise<any> => {
 		return { ok: false, error }
 	}
 }
+
 type AddresseeParams = {
 	rut: string
 	name: string
@@ -43,7 +44,7 @@ type AddresseeParams = {
 	}
 }
 
-const AddAddressee = async (addressee: AddresseeParams): Promise<any> => {
+const addAddressee = async (addressee: AddresseeParams): Promise<any> => {
 	try {
 		const { data } = await axios.post(
 			`http://localhost:3004/addressee`,
@@ -55,7 +56,7 @@ const AddAddressee = async (addressee: AddresseeParams): Promise<any> => {
 	}
 }
 
-const DeleteAddressee = async (addresseeId: string): Promise<any> => {
+const deleteAddressee = async (addresseeId: string): Promise<any> => {
 	try {
 		const { data } = await axios.delete(
 			`http://localhost:3004/addressee/${addresseeId}`
@@ -66,6 +67,6 @@ const DeleteAddressee = async (addresseeId: string): Promise<any> => {
 	}
 }
 
-export { GetAddressee, DeleteAddressee, AddAddressee }
+export { getAddressee, deleteAddressee, addAddressee }
 
 export type { AddresseeResponse, AddresseeParams }

@@ -4,7 +4,7 @@ import { Button, Input } from '../../../components'
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
 import { AddresseeParams } from '../../../services/addresseeService'
 import { useAppDispatch } from '../../../hooks/useDispatch'
-import { addAddresseeThunks } from '../../../store/addressee/thunksAddressee'
+import { addAddresseeThunks } from '../../../store/addressee/AddresseeThunk'
 
 export const CreateAddresseeModal = (): React.ReactElement => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)

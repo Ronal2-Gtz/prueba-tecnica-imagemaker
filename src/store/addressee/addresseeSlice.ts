@@ -18,7 +18,7 @@ export const addresseeSlice = createSlice({
 		addAddresseeList: (state, { payload }) => {
 			state.addresseeList = [...payload]
 		},
-		deleteAddressee: (state, { payload }) => {
+		removeAddressee: (state, { payload }) => {
 			state.addresseeList = state.addresseeList.filter(
 				(addressee) => addressee.id !== payload
 			)
@@ -41,7 +41,7 @@ export const addresseeSlice = createSlice({
 
 export const {
 	addAddresseeList,
-	deleteAddressee,
+	removeAddressee,
 	filterAddressee,
 	allAddresseeList,
 	addAddresseeSlice,
