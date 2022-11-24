@@ -45,7 +45,7 @@ export const Addressee = (): React.ReactElement => {
 	)
 
 	return (
-		<div className='w-9/12 h-full m-auto mt-20'>
+		<div className='w-9/12 h-full m-auto mt-10'>
 			<div>
 				<p className='font-semibold text-3xl mb-5'>Destinatarios</p>
 				<hr className='w-[7%] lg:w-[5%] xl:w-[3%] ' />

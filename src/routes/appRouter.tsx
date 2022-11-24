@@ -9,34 +9,41 @@ import { Login } from '../screens'
 import { PublicRoute } from './publicRoute'
 import { PrivateRoute } from './privateRoute'
 import { LastMov } from '../screens/lastMov'
+import { Navbar } from '../components/navbar/index'
+import { Addressee } from '../screens/addressee/index';
+import { ADDRESSEE, LAST_MOV, LOGIN } from './paths'
 
 export const AppRouter = (): React.ReactElement => {
 	return (
 		<Router>
-			<Routes>
-				<Route
-					path='login/*'
-					element={
-						<PublicRoute>
-							<Routes>
-								<Route path='/*' element={<Login />} />
-							</Routes>
-						</PublicRoute>
-					}
-				/>
+			<div>
+				<Navbar />
+				<Routes>
+					<Route
+						path={`${LOGIN}/*`}
+						element={
+							<PublicRoute>
+								<Routes>
+									<Route path='/*' element={<Login />} />
+								</Routes>
+							</PublicRoute>
+						}
+					/>
 
-				<Route
-					path='/*'
-					element={
-						<PrivateRoute>
-							<Routes>
-								<Route path='/lastMov' element={<LastMov />} />
-								<Route path='*' element={<Navigate to='/lastMov' />} />
-							</Routes>
-						</PrivateRoute>
-					}
-				/>
-			</Routes>
+					<Route
+						path='/*'
+						element={
+							<PrivateRoute>
+								<Routes>
+									<Route path={LAST_MOV} element={<LastMov />} />
+									<Route path={ADDRESSEE} element={<Addressee />} />
+									<Route path='*' element={<Navigate to={LAST_MOV} />} />
+								</Routes>
+							</PrivateRoute>
+						}
+					/>
+				</Routes>
+			</div>
 		</Router>
 	)
 }

@@ -32,7 +32,7 @@ export const LastMov = (): React.ReactElement => {
 	}, [dispatch])
 
 	return (
-		<div className='w-9/12 h-full m-auto mt-20 '>
+		<div className='w-9/12 h-full m-auto mt-10 '>
 			<div>
 				<p className='font-semibold text-sm'>Cuentas</p>
 				<p className='font-semibold text-3xl '>Ultimos Movimientos</p>

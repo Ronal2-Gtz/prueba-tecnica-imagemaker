@@ -1,10 +1,9 @@
-// import { AppRouter } from './routes/appRouter'
-import { Addressee } from './screens/addressee/index'
+import { AppRouter } from './routes/appRouter'
 
 const App = (): React.ReactElement => {
 	return (
 		<div className='h-screen w-full'>
-			<Addressee />
+			<AppRouter />
 		</div>
 	)
 }

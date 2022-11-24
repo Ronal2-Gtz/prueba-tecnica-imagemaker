@@ -20,7 +20,7 @@ export const Login = (): React.ReactElement => {
 	}
 
 	return (
-		<div className='flex flex-col justify-center items-center w-full h-full  '>
+		<div className='flex flex-col justify-center items-center w-full h-full mt-10'>
 			<div className='flex flex-col gap-y-10 border-[3px] px-7 py-14 md:px-32 rounded-md shadow-2xl'>
 				<div className='text-center'>
 					<p className='font-semibold text-lg'>
@@ -33,20 +33,20 @@ export const Login = (): React.ReactElement => {
 				<form onSubmit={handleSubmit(login)} className='flex flex-col gap-y-10'>
 					<Input
 						name='companyRut'
-						label='RUT Empresa'
+						placeholder='RUT Empresa'
 						Icon={<AiOutlineShop />}
 						register={register}
 					/>
 					<Input
 						name='userRut'
-						label='RUT Usuario'
+						placeholder='RUT Usuario'
 						Icon={<AiOutlineUser />}
 						register={register}
 					/>
 					<Input
 						type='password'
 						name='password'
-						label='Clave'
+						placeholder='Clave'
 						Icon={<AiOutlineLock />}
 						register={register}
 					/>
