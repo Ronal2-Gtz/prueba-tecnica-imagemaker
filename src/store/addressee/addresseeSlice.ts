@@ -11,8 +11,6 @@ const initialState: InitialState = {
 	addresseeFilter: [],
 }
 
-
-
 export const addresseeSlice = createSlice({
 	name: 'addressee',
 	initialState,
@@ -33,7 +31,7 @@ export const addresseeSlice = createSlice({
 				(addressee) => addressee.name.toUpperCase().includes(payload.toUpperCase())
 			)
 		},
-		allAddresseeList: (state) => {
+		copyAddresseeList: (state) => {
 			state.addresseeFilter = state.addresseeList
 		},
 	},
@@ -43,6 +41,6 @@ export const {
 	addAddresseeList,
 	removeAddressee,
 	filterAddressee,
-	allAddresseeList,
+	copyAddresseeList,
 	addAddresseeSlice,
 } = addresseeSlice.actions
