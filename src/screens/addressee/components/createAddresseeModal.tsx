@@ -5,14 +5,17 @@ import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
 import { AddresseeParams } from '../../../services/addresseeService'
 import { useAppDispatch } from '../../../hooks/useDispatch'
 import { addAddresseeThunks } from '../../../store/addressee/AddresseeThunk'
-import { Select } from '../../../components/select/index';
+import { Select } from '../../../components/select/index'
 import { currencyOpt } from '../selectOpt'
 
 export const CreateAddresseeModal = (): React.ReactElement => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 	const dispatch = useAppDispatch()
-	const handleOpenCloseModal = (): void => setIsModalOpen(!isModalOpen)
-	const { register, handleSubmit } = useForm()
+	const { register, handleSubmit, reset } = useForm()
+	const handleOpenCloseModal = (): void => {
+		setIsModalOpen(!isModalOpen)
+		reset()
+	}
 
 	const addAddressee: SubmitHandler<FieldValues> = (data) => {
 		const addAddresseeData: AddresseeParams = {
@@ -46,9 +49,7 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 			>
 				<div className='w-full px-10 py-5	'>
 					<div className='pb-10'>
-						<p className='font-semibold text-3xl '>
-							Nuevo beneficiario
-						</p>
+						<p className='font-semibold text-3xl '>Nuevo beneficiario</p>
 						<hr className='w-[7%] lg:w-[5%] xl:w-[3%] mt-5 ' />
 					</div>
 					<form
