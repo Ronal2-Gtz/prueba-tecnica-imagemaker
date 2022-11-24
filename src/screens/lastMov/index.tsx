@@ -66,28 +66,37 @@ export const LastMov = (): React.ReactElement => {
 			</div>
 			<form
 				onSubmit={handleSubmit(handleFilter)}
-				className='flex justify-between items-end mb-14'
+				className='w-full  grid grid-cols-12 items-end  md:gap-7 mb-14'
 			>
-				<InputSearch
-					Icon={<AiOutlineSearch />}
-					name='search'
-					placeholder='Buscar'
-					register={register}
-				/>
-				<Input
-					register={register}
-					name='start'
-					placeholder='YYYY/MM/DD'
-					label='Inicio'
-				/>
-				<Input
-					register={register}
-					name='end'
-					placeholder='YYYY/MM/DD'
-					label='Fin'
-				/>
-
-				<Button type='submit'>Filtrar</Button>
+				<div className='col-span-3'>
+					<InputSearch
+						Icon={<AiOutlineSearch />}
+						name='search'
+						placeholder='Buscar'
+						register={register}
+					/>
+				</div>
+				<div className='col-span-3'>
+					<Input
+						register={register}
+						name='start'
+						placeholder='YYYY/MM/DD'
+						label='Inicio'
+						type='date'
+					/>
+				</div>
+				<div className='col-span-3'>
+					<Input
+						register={register}
+						name='end'
+						placeholder='YYYY/MM/DD'
+						label='Fin'
+						type='date'
+					/>
+				</div>
+				<div className='col-span-3'>
+					<Button type='submit'>Filtrar</Button>
+				</div>
 			</form>
 			{table}
 		</div>
