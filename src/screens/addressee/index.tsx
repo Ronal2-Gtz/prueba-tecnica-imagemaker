@@ -2,7 +2,7 @@ import { InputSearch } from '../../components'
 import { useForm } from 'react-hook-form'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CreateAddresseeModal } from './components/createAddresseeModal'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/useDispatch'
 import {
 	deleteAddresseeThunks,
@@ -11,14 +11,19 @@ import {
 import { AddresseeAccessors, columns } from './components/table/columns'
 
 import { Table } from 'antd'
+import { filterAddressee } from '../../store/addressee/addresseeSlice'
 
 export const Addressee = (): React.ReactElement => {
 	const [id, setId] = useState('')
-	const { addresseeList } = useAppSelector((state) => state.addresseeList)
-	const dispatch = useAppDispatch()
-	const { register } = useForm()
+	const debounceRef = useRef<NodeJS.Timeout>()
 
-	const tableData = addresseeList.map<AddresseeAccessors>((item) => {
+	const { addresseeFilter } = useAppSelector((state) => state.addresseeList)
+	const dispatch = useAppDispatch()
+
+	const { register, watch } = useForm()
+	const search = watch('search')
+
+	const tableData = addresseeFilter.map<AddresseeAccessors>((item) => {
 		return {
 			key: item?.id,
 			name: item?.name,
@@ -38,6 +43,14 @@ export const Addressee = (): React.ReactElement => {
 			dispatch(deleteAddresseeThunks(id))
 		}
 	}, [id, dispatch])
+
+	useEffect(() => {
+		if (debounceRef.current) clearTimeout(debounceRef.current)
+
+		debounceRef.current = setTimeout(() => {
+			dispatch(filterAddressee(search))
+		}, 500)
+	}, [search])
 
 	const table = useMemo(
 		() => <Table columns={columns} pagination={false} dataSource={tableData} />,

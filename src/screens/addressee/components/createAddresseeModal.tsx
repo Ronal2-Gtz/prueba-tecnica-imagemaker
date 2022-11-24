@@ -40,7 +40,7 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 				footer={null}
 				open={isModalOpen}
 				onCancel={handleOpenCloseModal}
-				width={'90% '}
+				width={'70% '}
 			>
 				<div className='w-full px-10 py-5	'>
 					<div className='pb-10'>
@@ -109,7 +109,7 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								placeholder='Ingrese banco'
 							/>
 						</div>
-						<div className='col-span-12 mt-5 md:col-start-8 md:col-span-5'>
+						<div className='flex justify-end col-span-12 mt-5 '>
 							<Button
 								type='button'
 								appearance='secondaryTransparent'
