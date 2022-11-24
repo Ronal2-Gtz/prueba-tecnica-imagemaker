@@ -5,6 +5,8 @@ import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
 import { AddresseeParams } from '../../../services/addresseeService'
 import { useAppDispatch } from '../../../hooks/useDispatch'
 import { addAddresseeThunks } from '../../../store/addressee/AddresseeThunk'
+import { Select } from '../../../components/select/index';
+import { currencyOpt } from '../selectOpt'
 
 export const CreateAddresseeModal = (): React.ReactElement => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
@@ -94,11 +96,12 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 							/>
 						</div>
 						<div className='col-span-12 md:col-span-6'>
-							<Input
+							<Select
 								register={register}
 								name='currency'
 								label='Moneda'
 								placeholder='Ingrese Moneda'
+								data={currencyOpt}
 							/>
 						</div>
 						<div className='col-span-12 md:col-start-7  md:col-span-6'>
