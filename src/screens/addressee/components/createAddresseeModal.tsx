@@ -1,11 +1,10 @@
 import { Modal } from 'antd'
 import { useState } from 'react'
-import { Button, Input } from '../../../components'
+import { Button, Input, Select } from '../../../components'
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
 import { AddresseeParams } from '../../../services/addresseeService'
 import { useAppDispatch } from '../../../hooks/useDispatch'
 import { addAddresseeThunks } from '../../../store/addressee/AddresseeThunk'
-import { Select } from '../../../components/select/index'
 import { currencyOpt } from '../selectOpt'
 
 export const CreateAddresseeModal = (): React.ReactElement => {

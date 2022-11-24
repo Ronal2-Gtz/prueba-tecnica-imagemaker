@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+const BASE_PATH = 'http://localhost:3004'
+
 type Detail = {
 	currency: string
 	acc_numbr: string
@@ -23,7 +25,7 @@ type AddresseeResponse = Array<{
 const getAddressee = async (): Promise<any> => {
 	try {
 		const { data } = await axios.get<AddresseeResponse>(
-			'http://localhost:3004/addressee'
+			`${BASE_PATH}/addressee`
 		)
 		return { data, ok: true }
 	} catch (error) {
@@ -46,10 +48,7 @@ type AddresseeParams = {
 
 const addAddressee = async (addressee: AddresseeParams): Promise<any> => {
 	try {
-		const { data } = await axios.post(
-			`http://localhost:3004/addressee`,
-			addressee
-		)
+		const { data } = await axios.post(`${BASE_PATH}/addressee`, addressee)
 		return { data, ok: true }
 	} catch (error) {
 		return { ok: false, error }
@@ -58,9 +57,7 @@ const addAddressee = async (addressee: AddresseeParams): Promise<any> => {
 
 const deleteAddressee = async (addresseeId: string): Promise<any> => {
 	try {
-		const { data } = await axios.delete(
-			`http://localhost:3004/addressee/${addresseeId}`
-		)
+		const { data } = await axios.delete(`${BASE_PATH}/addressee/${addresseeId}`)
 		return { data, ok: true }
 	} catch (error) {
 		return { ok: false, error }

@@ -1,5 +1,5 @@
 import { AiOutlineLock, AiOutlineShop, AiOutlineUser } from 'react-icons/ai'
-import { Input, Button } from '../../components/index'
+import { Input, Button } from '../../components'
 import { checkingAutentication } from '../../store/auth/thunks'
 import { useAppDispatch } from '../../hooks/useDispatch'
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'

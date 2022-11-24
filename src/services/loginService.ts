@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+const BASE_PATH = 'http://localhost:3004'
+
 type Company = {
 	companyRut: string
 	userRut: string
@@ -17,12 +19,9 @@ export const AuthService = async ({
 	password,
 }: Company): Promise<any> => {
 	try {
-		const { data } = await axios.get<AuthResponse>(
-			'http://localhost:3004/login',
-			{
-				params: { user: userRut, pass: password },
-			}
-		)
+		const { data } = await axios.get<AuthResponse>(`${BASE_PATH}/login`, {
+			params: { user: userRut, pass: password },
+		})
 		return { ...data, ok: true }
 	} catch (error) {
 		return { ok: false, error }

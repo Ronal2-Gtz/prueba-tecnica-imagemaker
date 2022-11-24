@@ -22,7 +22,9 @@ export const Select = ({
 				placeholder={placeholder}
 				{...register(name)}
 			>
-				<option hidden value=''>{placeholder} </option>
+				<option hidden value=''>
+					{placeholder}{' '}
+				</option>
 				{data.map((item) => (
 					<option key={item.value} value={item.value}>
 						{item.label}

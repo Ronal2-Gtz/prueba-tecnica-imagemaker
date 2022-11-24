@@ -1,5 +1,5 @@
-import { Login } from './login'
-import { Addressee } from './addressee'
-import { LastMov } from './lastMov'
+import { Login } from './login/login'
+import { Addressee } from './addressee/addressee'
+import { LastMov } from './lastMov/lastMov'
 
 export { Login, Addressee, LastMov }

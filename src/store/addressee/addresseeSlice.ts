@@ -27,8 +27,8 @@ export const addresseeSlice = createSlice({
 			state.addresseeList.push(payload)
 		},
 		filterAddressee: (state, { payload }) => {
-			state.addresseeFilter = state.addresseeList.filter(
-				(addressee) => addressee.name.toUpperCase().includes(payload.toUpperCase())
+			state.addresseeFilter = state.addresseeList.filter((addressee) =>
+				addressee.name.toUpperCase().includes(payload.toUpperCase())
 			)
 		},
 		copyAddresseeList: (state) => {
