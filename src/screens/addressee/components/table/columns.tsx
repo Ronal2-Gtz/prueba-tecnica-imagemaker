@@ -40,7 +40,7 @@ export const columns: TableColumnsType<AddresseeAccessors> = [
 		key: 'account',
 		sorter: true,
 	},
-    {
+	{
 		title: 'Acciones',
 		dataIndex: 'action',
 		render: Actions,

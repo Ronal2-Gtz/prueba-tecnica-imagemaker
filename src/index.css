@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-hr{
-    height: 3px;
-    background-color: #ef1617;
-    border: none;
+hr {
+	height: 3px;
+	background-color: #ef1617;
+	border: none;
 }
 .ant-table-tbody .ant-table-row:nth-child(even) {
-    background-color: #F9FAFC;
-  }
-
-  
+	background-color: #f9fafc;
+}

@@ -1,5 +1,5 @@
 // import { AppRouter } from './routes/appRouter'
-import { Addressee } from './screens/addressee/index';
+import { Addressee } from './screens/addressee/index'
 
 const App = (): React.ReactElement => {
 	return (

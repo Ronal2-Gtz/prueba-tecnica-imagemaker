@@ -3,7 +3,6 @@ import { AddresseeAccessors, columns } from './columns'
 import { useMemo } from 'react'
 import { Table } from 'antd'
 
-
 export const TableAddressee = (): React.ReactElement => {
 	const { addresseeList } = useAppSelector((state) => state.addresseeList)
 	const tableData = addresseeList.map<AddresseeAccessors>((item) => {
@@ -19,7 +18,7 @@ export const TableAddressee = (): React.ReactElement => {
 
 	const table = useMemo(
 		() => <Table columns={columns} pagination={false} dataSource={tableData} />,
-		[tableData]
+		[addresseeList]
 	)
 
 	return <>{table}</>

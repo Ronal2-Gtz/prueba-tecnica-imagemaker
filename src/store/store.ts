@@ -5,7 +5,7 @@ import { addresseeSlice } from './addressee/addresseeSlice'
 export const store = configureStore({
 	reducer: {
 		auth: authSlice.reducer,
-		addresseeList: addresseeSlice.reducer
+		addresseeList: addresseeSlice.reducer,
 	},
 })
 

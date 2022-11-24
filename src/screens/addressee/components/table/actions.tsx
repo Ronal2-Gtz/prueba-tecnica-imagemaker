@@ -9,7 +9,7 @@ type ActionsProps = {
 
 export const Actions = ({ id }: ActionsProps): React.ReactElement => {
 	const dispatch = useAppDispatch()
-	
+
 	return (
 		<div className='flex items-center gap-x-3'>
 			<Tooltip title={'Eliminar'} placement='bottom'>
@@ -20,10 +20,10 @@ export const Actions = ({ id }: ActionsProps): React.ReactElement => {
 					}}
 					okText='Eliminar'
 					cancelText='No'
-                    okType='text'
+					okType='text'
 				>
 					<button>
-						<AiOutlineDelete size={20}  />
+						<AiOutlineDelete size={20} />
 					</button>
 				</Popconfirm>
 			</Tooltip>

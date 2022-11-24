@@ -15,7 +15,6 @@ export const Addressee = (): React.ReactElement => {
 		dispatch(getAddresseeThunks())
 	}, [dispatch])
 
-
 	return (
 		<div className='flex flex-col justify-center gap-y-10 w-9/12 h-full m-auto '>
 			<div>
@@ -29,9 +28,7 @@ export const Addressee = (): React.ReactElement => {
 						name='search'
 						placeholder='Buscar'
 						register={register}
-					
 					/>
-					
 				</form>
 				<CreateAddresseeModal />
 			</div>

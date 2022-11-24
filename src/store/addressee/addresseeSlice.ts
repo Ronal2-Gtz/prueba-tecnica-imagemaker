@@ -2,34 +2,47 @@ import { createSlice } from '@reduxjs/toolkit'
 import { AddresseeResponse } from '../../services/addresseeService'
 
 type InitialState = {
-    addresseeList: AddresseeResponse
-    addresseeFilter: AddresseeResponse
+	addresseeList: AddresseeResponse
+	addresseeFilter: AddresseeResponse
 }
 
 const initialState: InitialState = {
-    addresseeList: [],
-    addresseeFilter: []
+	addresseeList: [],
+	addresseeFilter: [],
 }
 
 export const addresseeSlice = createSlice({
-    name: "addressee",
-    initialState,
-    reducers: {
-        addAddresseeList: (state, { payload }) => {
-            state.addresseeList = [...payload]
-        },
-        deleteAddressee: (state, { payload }) => {
-            state.addresseeList = state.addresseeList.filter(addressee => addressee.id !== payload)
-        },
-        filterAddressee: (state, { payload }) => {
-            state.addresseeFilter = state.addresseeList.filter(addressee => addressee.name.toLocaleLowerCase() !== (payload as string).toLocaleLowerCase())
-        },
-        allAddresseeList: (state) => {
-            state.addresseeFilter = state.addresseeList
-        },
-
-
-    }
+	name: 'addressee',
+	initialState,
+	reducers: {
+		addAddresseeList: (state, { payload }) => {
+			state.addresseeList = [...payload]
+		},
+		deleteAddressee: (state, { payload }) => {
+			state.addresseeList = state.addresseeList.filter(
+				(addressee) => addressee.id !== payload
+			)
+		},
+		addAddresseeSlice: (state, { payload }) => {
+			state.addresseeList.push(payload)
+		},
+		filterAddressee: (state, { payload }) => {
+			state.addresseeFilter = state.addresseeList.filter(
+				(addressee) =>
+					addressee.name.toLocaleLowerCase() !==
+					(payload as string).toLocaleLowerCase()
+			)
+		},
+		allAddresseeList: (state) => {
+			state.addresseeFilter = state.addresseeList
+		},
+	},
 })
 
-export const { addAddresseeList, deleteAddressee, filterAddressee, allAddresseeList} = addresseeSlice.actions
+export const {
+	addAddresseeList,
+	deleteAddressee,
+	filterAddressee,
+	allAddresseeList,
+	addAddresseeSlice,
+} = addresseeSlice.actions

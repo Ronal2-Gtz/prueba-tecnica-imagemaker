@@ -37,7 +37,7 @@ export const Input = ({
                 ${readOnly && 'cursor-not-allowed bg-gray-100'}
                 ${Icon ? 'pl-10 ' : ''}
                 `}
-				{ ...register(name)}
+				{...register(name)}
 				{...props}
 			/>
 		</div>
