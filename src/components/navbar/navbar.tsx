@@ -18,15 +18,15 @@ export const Navbar = (): React.ReactElement => {
 
 	return (
 		<header>
-			<nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md h-16 '>
-				<div className='flex flex-wrap justify-between items-center w-full mx-auto max-w-screen-xl'>
+			<nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md min-h-[16px] '>
+				<div className='flex md:flex-wrap justify-between items-center w-full mx-auto max-w-screen-xl'>
 					<Link to={'/'} className='flex items-center'>
 						<span className='self-center text-xl font-semibold whitespace-nowrap '>
 							Imagemaker
 						</span>
 					</Link>
 					{isAuthenticating ? (
-						<div className='flex items-center lg:order-2'>
+						<div className='flex flex-col md:flex-row md:items-center lg:order-2'>
 							<Link
 								to={LAST_MOV}
 								className=' focus:ring-gray-300 font-medium text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2'

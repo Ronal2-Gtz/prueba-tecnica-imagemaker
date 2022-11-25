@@ -46,9 +46,9 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 				onCancel={handleOpenCloseModal}
 				width={'70% '}
 			>
-				<div className='w-full px-10 py-5	'>
+				<div className='w-full px-10 py-5'>
 					<div className='pb-10'>
-						<p className='font-semibold text-3xl '>Nuevo beneficiario</p>
+						<p className='font-semibold text-lg md:text-3xl '>Nuevo beneficiario</p>
 						<hr className='w-[7%] lg:w-[5%] xl:w-[3%] mt-5 ' />
 					</div>
 					<form
@@ -112,7 +112,7 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								placeholder='Ingrese banco'
 							/>
 						</div>
-						<div className='flex justify-end col-span-12 mt-5 '>
+						<div className='flex flex-col md:flex-row justify-end col-span-12 mt-5 '>
 							<Button
 								type='button'
 								appearance='secondaryTransparent'

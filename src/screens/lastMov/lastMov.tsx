@@ -40,7 +40,7 @@ export const LastMov = (): React.ReactElement => {
 	}
 
 	const table = useMemo(
-		() => <Table columns={columns} dataSource={tableData} />,
+		() => <Table columns={columns} dataSource={tableData} scroll={{ x: 1000 }} />,
 		[tableData]
 	)
 
@@ -57,7 +57,7 @@ export const LastMov = (): React.ReactElement => {
 	}, [search])
 
 	return (
-		<div className='w-9/12 h-full m-auto mt-10 '>
+		<div className='w-11/12  lg:w-9/12 h-full m-auto mt-10 '>
 			<div>
 				<p className='font-semibold text-sm'>Cuentas</p>
 				<p className='font-semibold text-3xl '>Ultimos Movimientos</p>
@@ -65,9 +65,9 @@ export const LastMov = (): React.ReactElement => {
 			</div>
 			<form
 				onSubmit={handleSubmit(handleFilter)}
-				className='w-full  grid grid-cols-12 items-end  md:gap-7 mb-14'
+				className='w-full grid grid-cols-12 items-end  md:gap-7 mb-14'
 			>
-				<div className='col-span-3'>
+				<div className='col-span-12 my-4 md:col-span-3'>
 					<InputSearch
 						Icon={<AiOutlineSearch />}
 						name='search'
@@ -75,7 +75,7 @@ export const LastMov = (): React.ReactElement => {
 						register={register}
 					/>
 				</div>
-				<div className='col-span-3'>
+				<div className='col-span-12 my-4 md:col-span-3'>
 					<Input
 						register={register}
 						name='start'
@@ -84,7 +84,7 @@ export const LastMov = (): React.ReactElement => {
 						type='date'
 					/>
 				</div>
-				<div className='col-span-3'>
+				<div className='col-span-12 my-4 md:col-span-3'>
 					<Input
 						register={register}
 						name='end'
@@ -93,7 +93,7 @@ export const LastMov = (): React.ReactElement => {
 						type='date'
 					/>
 				</div>
-				<div className='col-span-3'>
+				<div className='col-span-12 my-4 md:col-span-3'>
 					<Button type='submit'>Filtrar</Button>
 				</div>
 			</form>

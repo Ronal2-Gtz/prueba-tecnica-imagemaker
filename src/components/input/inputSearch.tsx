@@ -31,7 +31,7 @@ export const InputSearch = ({
 				type={type}
 				readOnly={readOnly}
 				id={name}
-				className={` w-full h-10 border-2 rounded-lg p-3 text-sm placeholder-gray-400 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-400 outline-none 
+				className={` w-full h-10 border-2 rounded-lg p-3 text-sm placeholder-gray-600 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-400 outline-none 
                 ${readOnly && 'cursor-not-allowed bg-gray-100'}
 				${Icon ? 'pr-10 ' : ''}
                 `}
