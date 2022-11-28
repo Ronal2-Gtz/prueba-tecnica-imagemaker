@@ -7,6 +7,8 @@ type InputProps = {
 	readOnly?: boolean
 	Icon?: React.ReactNode
 	srLabel?: boolean
+	required?: boolean
+	error?: any
 	register: UseFormRegister<FieldValues>
 	onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
@@ -20,26 +22,33 @@ export const Input = ({
 	placeholder,
 	register,
 	readOnly = false,
+	required,
+	error,
 	...props
 }: InputProps): React.ReactElement => {
 	return (
-		<div className='relative text-gray-600 focus-within:text-gray-400'>
-			<span className='absolute inset-y-0 left-0 flex items-center pl-2 text-gray-400'>
-				{Icon}
-			</span>
-			<label className='font-semibold'>{label}</label>
-			<input
-				placeholder={placeholder}
-				type={type}
-				readOnly={readOnly}
-				id={name}
-				className={` w-full border-b py-3 text-sm placeholder-gray-600 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-400 outline-none 
-                ${readOnly && 'cursor-not-allowed bg-gray-100'}
-                ${Icon ? 'pl-10 ' : ''}
-                `}
-				{...register(name)}
-				{...props}
-			/>
+		<div>
+			<div className='relative text-gray-600 focus-within:text-gray-400'>
+				<span className='absolute inset-y-0 left-0 flex items-center pl-2 text-gray-400'>
+					{Icon}
+				</span>
+				<label className='font-semibold'>{label}</label>
+				<input
+					placeholder={placeholder}
+					type={type}
+					readOnly={readOnly}
+					id={name}
+					className={` w-full border-b py-3 text-sm placeholder-gray-600 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-400 outline-none 
+					${readOnly && 'cursor-not-allowed bg-gray-100'}
+					${Icon ? 'pl-10 ' : ''}
+					`}
+					{...register(name, { required })}
+					{...props}
+				/>
+			</div>
+			{error && (
+				<p className='text-red-500'>{`${label ?? placeholder} es requerido`}</p>
+			)}
 		</div>
 	)
 }

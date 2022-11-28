@@ -10,7 +10,12 @@ import { currencyOpt } from '../selectOpt'
 export const CreateAddresseeModal = (): React.ReactElement => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 	const dispatch = useAppDispatch()
-	const { register, handleSubmit, reset } = useForm()
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm()
 	const handleOpenCloseModal = (): void => {
 		setIsModalOpen(!isModalOpen)
 		reset()
@@ -48,7 +53,9 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 			>
 				<div className='w-full px-10 py-5'>
 					<div className='pb-10'>
-						<p className='font-semibold text-lg md:text-3xl '>Nuevo beneficiario</p>
+						<p className='font-semibold text-lg md:text-3xl '>
+							Nuevo beneficiario
+						</p>
 						<hr className='w-[7%] lg:w-[5%] xl:w-[3%] mt-5 ' />
 					</div>
 					<form
@@ -61,6 +68,8 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								name='rut'
 								label='Rut'
 								placeholder='Ingrese Rut'
+								required
+								error={errors?.rut}
 							/>
 						</div>
 						<div className='col-span-12 md:col-span-6'>
@@ -69,6 +78,8 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								name='email'
 								label='E-mail'
 								placeholder='Ingrese e-mail'
+								required
+								error={errors?.email}
 							/>
 						</div>
 						<div className='col-span-12 md:col-span-6'>
@@ -77,6 +88,8 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								name='name'
 								label='Nombre / razón social'
 								placeholder='Ingrese nombre completo'
+								required
+								error={errors?.name}
 							/>
 						</div>
 						<div className='col-span-12 md:col-span-6'>
@@ -85,6 +98,8 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								name='alias'
 								label='Alias'
 								placeholder='Ingrese un alias'
+								required
+								error={errors?.alias}
 							/>
 						</div>
 						<div className='col-span-12 md:col-span-6'>
@@ -93,6 +108,8 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								name='accountNumber'
 								label='N° cuenta'
 								placeholder='Ingrese N° cuenta'
+								required
+								error={errors?.accountNumber}
 							/>
 						</div>
 						<div className='col-span-12 md:col-span-6'>
@@ -102,6 +119,8 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								label='Moneda'
 								placeholder='Ingrese Moneda'
 								data={currencyOpt}
+								required
+								error={errors?.currency}
 							/>
 						</div>
 						<div className='col-span-12 md:col-start-7  md:col-span-6'>
@@ -110,6 +129,8 @@ export const CreateAddresseeModal = (): React.ReactElement => {
 								name='bank'
 								label='Bancos'
 								placeholder='Ingrese banco'
+								required
+								error={errors?.bank}
 							/>
 						</div>
 						<div className='flex flex-col md:flex-row justify-end col-span-12 mt-5 '>
