@@ -5,6 +5,8 @@ type SelectProps = {
 	register: UseFormRegister<FieldValues>
 	name: string
 	placeholder?: string
+	required?: boolean
+	error?: any
 }
 
 export const Select = ({
@@ -13,14 +15,16 @@ export const Select = ({
 	register,
 	name,
 	placeholder,
+	required,
+	error,
 }: SelectProps): React.ReactElement => {
 	return (
-		<>
+		<div>
 			<label className='font-semibold'>{label}</label>
 			<select
 				className='w-full border-b py-3 text-gray-600 text-sm placeholder-gray-400 font-semibold lg:py-0.5 xl:py-1.5 xl:text-lg border-gray-400 outline-none'
 				placeholder={placeholder}
-				{...register(name)}
+				{...register(name, { required })}
 			>
 				<option hidden value=''>
 					{placeholder}{' '}
@@ -31,6 +35,9 @@ export const Select = ({
 					</option>
 				))}
 			</select>
-		</>
+			{error && (
+				<p className='text-red-500'>{`${label ?? placeholder} es requerido`}</p>
+			)}
+		</div>
 	)
 }

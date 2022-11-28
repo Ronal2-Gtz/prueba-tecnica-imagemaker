@@ -12,7 +12,11 @@ type FormLogin = {
 
 export const Login = (): React.ReactElement => {
 	const dispatch = useAppDispatch()
-	const { register, handleSubmit } = useForm()
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm()
 
 	const login: SubmitHandler<FieldValues> = (data) => {
 		const { companyRut, password, userRut } = data as FormLogin
@@ -31,25 +35,29 @@ export const Login = (): React.ReactElement => {
 					</p>
 				</div>
 				<form onSubmit={handleSubmit(login)} className='flex flex-col gap-y-10'>
-					<Input
-						name='companyRut'
-						placeholder='RUT Empresa'
-						Icon={<AiOutlineShop />}
-						register={register}
-					/>
+						<Input
+							name='companyRut'
+							placeholder='RUT Empresa'
+							Icon={<AiOutlineShop />}
+							register={register}
+						/>				
 					<Input
 						name='userRut'
 						placeholder='RUT Usuario'
 						Icon={<AiOutlineUser />}
 						register={register}
-					/>
+						required
+						error={errors?.userRut}
+					/>					
 					<Input
 						type='password'
 						name='password'
 						placeholder='Clave'
 						Icon={<AiOutlineLock />}
 						register={register}
-					/>
+						required
+						error={errors?.password}
+					/>			
 					<Button type='submit' padding='xl'>
 						Ingresar
 					</Button>
